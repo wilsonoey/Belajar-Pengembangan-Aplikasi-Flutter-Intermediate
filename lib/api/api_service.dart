@@ -20,7 +20,9 @@ class ApiService {
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': email, 'password': password}),
     );
-    return jsonDecode(response.body);
+    return response.body.isNotEmpty
+        ? jsonDecode(response.body)
+        : {'error': true, 'message': 'Failed to register'};
   }
 
   Future<Map<String, dynamic>> addStory(String token, String description, String photoPath, double lat, double lon) async {
