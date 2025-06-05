@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            ElevatedButton(onPressed: _login, child: Text('Login')),
+            ElevatedButton(key: const ValueKey("login_button"), onPressed: _login, child: Text('Login')),
           ],
         ),
       ),
