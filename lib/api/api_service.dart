@@ -22,7 +22,7 @@ class ApiService {
     );
     return response.body.isNotEmpty
         ? jsonDecode(response.body)
-        : {'error': true, 'message': 'Failed to register'};
+        : {'error': true, 'message': 'Failed to login'};
   }
 
   Future<Map<String, dynamic>> addStory(String token, String description, String photoPath, double lat, double lon) async {
