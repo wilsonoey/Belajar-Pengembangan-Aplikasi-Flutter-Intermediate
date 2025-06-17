@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:storyapp/components/textfield.dart';
 import '../api/api_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -42,17 +41,16 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextFieldComponent.normalTextField(
-              context: context,
+            TextField(
               key: const ValueKey("email_field"),
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email'),
             ),
-            TextFieldComponent.passwordTextField(
-              context: context,
+            TextField(
               key: const ValueKey("password_field"),
               controller: _passwordController,
               decoration: InputDecoration(labelText: 'Password'),
+              obscureText: true,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5.0),
